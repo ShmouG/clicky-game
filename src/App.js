@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
 import Header from "./components/Header";
-import cards from "./cards.json";
+import cards from "./cards.json"; 
+import Navbar from "./components/Navbar"
 
 class App extends Component {
   // Setting this.state.cards to the cards json array
@@ -14,7 +15,7 @@ class App extends Component {
 
   gameOver = () => {
     if (this.state.score > this.state.highscore) {
-      this.setState({highscore: this.state.score}, function() {
+      this.setState({highscore: this.state.score}, () => {
         console.log(this.state.highscore);
       });
     }
@@ -31,10 +32,10 @@ class App extends Component {
       if (o.id === id) {
         if(cards[i].count === 0){
           cards[i].count = cards[i].count + 1;
-          this.setState({score : this.state.score + 1}, function(){
+          this.setState({score : this.state.score + 1}, () =>{
             console.log(this.state.score);
           });
-          this.state.cards.sort(() => Math.random() - 0.5)
+          this.state.cards.sort(() => Math.random() - 1)
           return true; 
         } else {
           this.gameOver();
@@ -46,7 +47,8 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Header score={this.state.score} highscore={this.state.highscore}>Clicky Game</Header>
+        <Navbar score={this.state.score} highscore={this.state.highscore}>That Clicky Game! ></Navbar>
+        <Header />
         {this.state.cards.map(card => (
           <Card
             clickCount={this.clickCount}

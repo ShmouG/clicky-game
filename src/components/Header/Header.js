@@ -1,13 +1,11 @@
 import React from "react";
 import "./Header.css";
 
-const Header = props => (
-  <div className="header">
-    <div className="title">{props.children}</div>
-    <div className="scores">
-      Score: {props.score} Highscore: {props.highscore}
-    </div>
-  </div>
+const Header = () => (
+  <header className="header">
+    <strong><h1>That Clickity Clack Game!</h1>
+    <h2>Click on an image to earn points, but don't click on any more than once!</h2></strong>
+  </header>
 );
 
 export default Header;

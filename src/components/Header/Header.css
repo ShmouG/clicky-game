@@ -1,14 +1,10 @@
+
 .header {
-    width: 100%;
-    font-size: 2rem;
-    color: #2A77AE;
-    margin-bottom: 10px;
-  }
-  
-  .title {
-    float: left;
-  }
-  
-  .scores {
-    float: right;
-  }
+  background-color: #6CADDC;
+  background-repeat: repeat;
+  color: #fff;
+  /* min-height: 110px; */
+  padding: 130px 20px;
+  padding-bottom: 0;
+  text-align: center;
+}

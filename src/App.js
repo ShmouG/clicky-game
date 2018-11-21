@@ -8,12 +8,12 @@ import Navbar from "./components/Navbar"
 class App extends Component {
   // Setting this.state.cards to the cards json array
   state = {
-    cards,
+    cards: cards.sort(() => Math.random() - 0.5),
     score: 0,
     highscore: 0
   };
 
-  gameOver = () => {
+  gameOver = event => {
     if (this.state.score > this.state.highscore) {
       this.setState({highscore: this.state.score}, () => {
         console.log(this.state.highscore);
@@ -35,7 +35,7 @@ class App extends Component {
           this.setState({score : this.state.score + 1}, () =>{
             console.log(this.state.score);
           });
-          this.state.cards.sort(() => Math.random() - 1)
+          this.state.cards.sort(() => Math.random() - 0.5)
           return true; 
         } else {
           this.gameOver();
